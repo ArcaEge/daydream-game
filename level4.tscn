@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://dmkd5unfv8fir"]
+[gd_scene load_steps=35 format=4 uid="uid://d20lxol50dacu"]
 
 [ext_resource type="Texture2D" uid="uid://bscy4fx3yvkpm" path="res://tileset.png" id="1_7ln0b"]
 [ext_resource type="Script" uid="uid://c0brkyiv3qdsl" path="res://player.gd" id="2_gmhuy"]
@@ -662,7 +662,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21xmu"]
 size = Vector2(11, 13)
 
-[node name="Node2D" type="Node2D"]
+[node name="Level4" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-1, 0)
@@ -676,31 +676,31 @@ position = Vector2(70, 151)
 position = Vector2(158.5, 91.5)
 shape = SubResource("WorldBoundaryShape2D_8tcn8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="Spikes(1)" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(57.5, -103.5)
 shape = SubResource("RectangleShape2D_7ln0b")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+[node name="Spikes(2)" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(132, -105)
 shape = SubResource("RectangleShape2D_gmhuy")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+[node name="Spikes(3)" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(312.5, -8)
 shape = SubResource("RectangleShape2D_g1tnb")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+[node name="Spikes(4)" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(169, -9)
 shape = SubResource("RectangleShape2D_pklw6")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D"]
+[node name="Spikes(5)" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(81.5, -8.5)
 shape = SubResource("RectangleShape2D_bp1i4")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Area2D"]
+[node name="Spikes(6)" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(50.5, 56)
 shape = SubResource("RectangleShape2D_bvvno")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Area2D"]
+[node name="Spikes(7)" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(321.5, 56)
 shape = SubResource("RectangleShape2D_b4lsh")
 
