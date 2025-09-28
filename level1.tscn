@@ -1,7 +1,9 @@
-[gd_scene load_steps=23 format=4 uid="uid://dqjkxpj75twx0"]
+[gd_scene load_steps=24 format=4 uid="uid://dqjkxpj75twx0"]
 
 [ext_resource type="Script" uid="uid://c0brkyiv3qdsl" path="res://player.gd" id="1_dopym"]
 [ext_resource type="Texture2D" uid="uid://bscy4fx3yvkpm" path="res://tileset.png" id="1_jwv3a"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dopym"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dopym"]
 atlas = ExtResource("1_jwv3a")
@@ -567,6 +569,13 @@ sources/0 = SubResource("TileSetAtlasSource_mx85b")
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(70, 151)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(158.5, 91.5)
+shape = SubResource("WorldBoundaryShape2D_dopym")
+
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_dopym")
 
@@ -585,3 +594,6 @@ zoom = Vector2(5, 5)
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD//wMAAAAGAAEAAAAAAAMAAAAHAAEAAAABAAMAAAAIAAEAAAACAAMAAAAJAAEAAAADAAMAAAAKAAEAAAAEAAMAAAALAAEAAAAFAAMAAAAMAAAAAAAGAAMAAAANAAAAAAAHAAMAAAAOAAAAAAAIAAMAAAAPAAAAAAAJAAMAAAAMAAAAAAAKAAMAAAANAAAAAAALAAMAAAAOAAAAAAAMAAMAAAAPAAAAAAD+/wcAAAAMAAAAAAD//wcAAAANAAAAAAAAAAcAAAAOAAAAAAABAAcAAAAPAAAAAAA=")
 tile_set = SubResource("TileSet_hx44q")
+
+[connection signal="area_entered" from="Area2D" to="Player" method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="Player" method="_on_void_entered"]
