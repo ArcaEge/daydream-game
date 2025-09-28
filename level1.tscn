@@ -1,8 +1,9 @@
-[gd_scene load_steps=31 format=4 uid="uid://dqjkxpj75twx0"]
+[gd_scene load_steps=32 format=4 uid="uid://dqjkxpj75twx0"]
 
 [ext_resource type="Script" uid="uid://c0brkyiv3qdsl" path="res://player.gd" id="1_dopym"]
 [ext_resource type="Texture2D" uid="uid://bscy4fx3yvkpm" path="res://tileset.png" id="1_jwv3a"]
 [ext_resource type="Script" uid="uid://ui6ud5k644qf" path="res://level_1.gd" id="1_ootpb"]
+[ext_resource type="FontFile" uid="uid://d105wajr2n4vm" path="res://m5x7.ttf" id="4_v38iq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mx85b"]
 texture = ExtResource("1_jwv3a")
@@ -484,6 +485,9 @@ sources/0 = SubResource("TileSetAtlasSource_mx85b")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ootpb"]
 size = Vector2(47, 3)
 
+[sub_resource type="LabelSettings" id="LabelSettings_ootpb"]
+font = ExtResource("4_v38iq")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_1idop"]
 atlas = ExtResource("1_jwv3a")
 region = Rect2(48, 288, 16, 16)
@@ -669,9 +673,17 @@ shape = SubResource("RectangleShape2D_ootpb")
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_dopym")
 
+[node name="Lives" type="Label" parent="Player"]
+offset_left = -141.0
+offset_top = -81.0
+offset_right = -97.0
+offset_bottom = -58.0
+text = "lives: "
+label_settings = SubResource("LabelSettings_ootpb")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_5j5gb")
-frame_progress = 0.6075659
+frame_progress = 0.49721605
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(-0.5, 1.5)
