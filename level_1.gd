@@ -1,6 +1,7 @@
 extends Node2D
 
 var lives = 10
+var level2 = preload("res://level2.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,3 +21,8 @@ func _on_player_death() -> void:
 	else:
 		lives = 10
 		print("UR COOKED")
+
+
+func _on_transition_area_entered(body: PhysicsBody2D) -> void:
+	print("WOW YOU PASSED - NOW FACE THE NEXT LEVEL")
+	get_tree().change_scene_to_packed(level2)
