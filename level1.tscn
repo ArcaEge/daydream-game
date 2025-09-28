@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://dqjkxpj75twx0"]
+[gd_scene load_steps=33 format=4 uid="uid://dqjkxpj75twx0"]
 
 [ext_resource type="Script" uid="uid://c0brkyiv3qdsl" path="res://player.gd" id="1_dopym"]
 [ext_resource type="Texture2D" uid="uid://bscy4fx3yvkpm" path="res://tileset.png" id="1_jwv3a"]
@@ -647,7 +647,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jwv3a"]
-size = Vector2(11, 13)
+size = Vector2(11, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v38iq"]
 size = Vector2(14, 14)
@@ -686,7 +686,7 @@ sprite_frames = SubResource("SpriteFrames_5j5gb")
 frame_progress = 0.49721605
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-0.5, 1.5)
+position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_jwv3a")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

@@ -1,8 +1,8 @@
 extends Node2D
 
 var lives = 10
-var current_level = preload("res://level1.tscn")
-var next_level = preload("res://level2.tscn")
+var current_level = preload("res://level3.tscn")
+var next_level = preload("res://level3.tscn")
 
 
 # Called when the node enters the scene tree for the first time.

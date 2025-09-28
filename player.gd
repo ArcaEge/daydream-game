@@ -44,14 +44,15 @@ func _on_void_entered(body: PhysicsBody2D) -> void:
 
 func _on_animated_sprite_2d_animation_looped() -> void:
 	if $AnimatedSprite2D.animation == "death":
-		$AnimatedSprite2D.play("default")
-		$AnimatedSprite2D.flip_h = false
-		
 		var ghost_scene = preload("res://ghost.tscn")
 		var ghost = ghost_scene.instantiate()
 		ghost.position.x = position.x
 		ghost.position.y = position.y
+		ghost.get_child(0).get_child(0).modulate.a = 0.5
 		add_sibling(ghost)
 		
 		position.x = 0
 		position.y = 0
+		
+		$AnimatedSprite2D.play("default")
+		$AnimatedSprite2D.flip_h = false

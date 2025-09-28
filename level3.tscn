@@ -1,7 +1,9 @@
-[gd_scene load_steps=29 format=4 uid="uid://bdcnusp558l81"]
+[gd_scene load_steps=33 format=4 uid="uid://bgbv4ttee30t"]
 
 [ext_resource type="Texture2D" uid="uid://bscy4fx3yvkpm" path="res://tileset.png" id="1_o2ccw"]
+[ext_resource type="Script" uid="uid://ioucmrjpu8if" path="res://level_3.gd" id="2_5lcx6"]
 [ext_resource type="Script" uid="uid://c0brkyiv3qdsl" path="res://player.gd" id="2_qrujo"]
+[ext_resource type="FontFile" uid="uid://d105wajr2n4vm" path="res://m5x7.ttf" id="4_5lcx6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8i3m3"]
 texture = ExtResource("1_o2ccw")
@@ -456,6 +458,12 @@ size = Vector2(31, 6.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrujo"]
 size = Vector2(63.5, 7)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o2ccw"]
+distance = -114.5
+
+[sub_resource type="LabelSettings" id="LabelSettings_an40m"]
+font = ExtResource("4_5lcx6")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_1idop"]
 atlas = ExtResource("1_o2ccw")
 region = Rect2(48, 288, 16, 16)
@@ -646,8 +654,21 @@ shape = SubResource("RectangleShape2D_qrujo")
 position = Vector2(395, -106)
 shape = SubResource("RectangleShape2D_o2ccw")
 
+[node name="Void" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(158.5, 91.5)
+shape = SubResource("WorldBoundaryShape2D_o2ccw")
+script = ExtResource("2_5lcx6")
+
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("2_qrujo")
+
+[node name="Lives" type="Label" parent="Player"]
+offset_left = -141.0
+offset_top = -81.0
+offset_right = -97.0
+offset_bottom = -58.0
+text = "lives: "
+label_settings = SubResource("LabelSettings_an40m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_r6vdu")
@@ -658,6 +679,6 @@ position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_21xmu")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(5, 5)
+zoom = Vector2(4, 4)
 
 [connection signal="animation_looped" from="Player/AnimatedSprite2D" to="Player" method="_on_animated_sprite_2d_animation_looped"]
