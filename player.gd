@@ -4,12 +4,16 @@ const SPEED = 100.0
 const JUMP_VELOCITY = -200.0
 var has_direction = false
 
+signal death
+
 func _ready() -> void:
 	$AnimatedSprite2D.play("default")
 	var void_area = get_node("../Area2D")   # Path to Area2D
 	void_area.connect("body_entered", Callable(self, "_on_void_entered"))
 
 func _physics_process(delta: float) -> void:
+	if $AnimatedSprite2D.animation == "death":
+		return
 	# Movement
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -34,4 +38,16 @@ func _physics_process(delta: float) -> void:
 
 func _on_void_entered(body: PhysicsBody2D) -> void:
 	if body == self:
-		print("YO IM DEAD")
+		death.emit()
+		$AnimatedSprite2D.play("death")
+
+
+func _on_node_2d_complete_death() -> void:
+	pass
+
+
+func _on_animated_sprite_2d_animation_looped() -> void:
+	if $AnimatedSprite2D.animation == "death":
+		$AnimatedSprite2D.play("default")
+		position.y = 0
+		position.x = 0
