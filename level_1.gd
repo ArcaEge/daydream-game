@@ -2,7 +2,6 @@ extends Node2D
 
 var lives = 10
 
-signal complete_death
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,4 +18,5 @@ func _on_player_death() -> void:
 		lives -= 1
 		print("IMAGINE, SKILL ISSUE")
 	else:
+		lives = 10
 		print("UR COOKED")

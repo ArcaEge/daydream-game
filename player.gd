@@ -42,12 +42,9 @@ func _on_void_entered(body: PhysicsBody2D) -> void:
 		$AnimatedSprite2D.play("death")
 
 
-func _on_node_2d_complete_death() -> void:
-	pass
-
-
 func _on_animated_sprite_2d_animation_looped() -> void:
 	if $AnimatedSprite2D.animation == "death":
 		$AnimatedSprite2D.play("default")
 		position.y = 0
 		position.x = 0
+		$AnimatedSprite2D.flip_h = false
