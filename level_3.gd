@@ -1,6 +1,6 @@
 extends Node2D
 
-var lives = 10
+var lives = 15
 var current_level = preload("res://level3.tscn")
 var next_level = preload("res://level4.tscn")
 
