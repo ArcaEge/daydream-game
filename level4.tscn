@@ -1,7 +1,7 @@
 [gd_scene load_steps=39 format=4 uid="uid://d20lxol50dacu"]
 
 [ext_resource type="Texture2D" uid="uid://bscy4fx3yvkpm" path="res://tileset.png" id="1_7ln0b"]
-[ext_resource type="Script" path="res://level_4.gd" id="1_g1tnb"]
+[ext_resource type="Script" uid="uid://cv7yyrmy55ejy" path="res://level_4.gd" id="1_g1tnb"]
 [ext_resource type="Script" uid="uid://c0brkyiv3qdsl" path="res://player.gd" id="2_gmhuy"]
 [ext_resource type="FontFile" uid="uid://d105wajr2n4vm" path="res://m5x7.ttf" id="3_g1tnb"]
 
