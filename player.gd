@@ -38,12 +38,12 @@ func _physics_process(delta: float) -> void:
 
 func _on_void_entered(body: PhysicsBody2D) -> void:
 	if body == self:
-		death.emit()
 		$AnimatedSprite2D.play("death")
 
 
 func _on_animated_sprite_2d_animation_looped() -> void:
 	if $AnimatedSprite2D.animation == "death":
+		death.emit()
 		var ghost_scene = preload("res://ghost.tscn")
 		var ghost = ghost_scene.instantiate()
 		ghost.position.x = position.x
